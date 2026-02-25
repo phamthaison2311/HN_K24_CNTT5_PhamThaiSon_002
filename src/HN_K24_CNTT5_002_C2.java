@@ -18,25 +18,38 @@ public class HN_K24_CNTT5_002_C2 {
 
         System.out.printf("Bạn muốn xóa phần tử vị trí: ");
         int index = sc.nextInt();
-        int k = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (i != index - 1) {
-                arr[i] = arr[k];
-                k++;
-            }
+        for (int i = index - 1; i < n - 1; i++) {
+            arr[i] = arr[i + 1];
         }
 
         System.out.println("Sau khi xóa theo yêu cầu");
         for (int i = 0; i < n - 1; i++) {
             System.out.printf("%d", arr[i]);
-            if (i != k - 1) {
+            if (i < n - 2) {
                 System.out.printf(", ");
             }
         }
+        System.out.println();
 
         // Tìm số còn thiếu
+        System.out.println("--- Tìm số còn thiếu từ 1 đến n ---");
+        System.out.printf("Nhập n (giới hạn của dãy): ");
+        int limit = sc.nextInt();
+        int[] daySo = new int[limit - 1];
 
+        int tongLyThuyet = 0;
+        for (int i = 1; i <= limit; i++) {
+            tongLyThuyet += i;
+        }
 
+        int tongThucTe = 0;
+        for (int i = 0; i < limit - 1; i++) {
+            System.out.printf("Nhập phần tử thứ %d: ", i + 1);
+            daySo[i] = sc.nextInt();
+            tongThucTe += daySo[i];
+        }
+
+        int soConThieu = tongLyThuyet - tongThucTe;
+        System.out.println("Số còn thiếu trong dãy là: " + soConThieu);
     }
 }
