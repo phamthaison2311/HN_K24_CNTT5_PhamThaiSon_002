@@ -32,24 +32,6 @@ public class HN_K24_CNTT5_002_C2 {
         System.out.println();
 
         // Tìm số còn thiếu
-        System.out.println("--- Tìm số còn thiếu từ 1 đến n ---");
-        System.out.printf("Nhập n (giới hạn của dãy): ");
-        int limit = sc.nextInt();
-        int[] daySo = new int[limit - 1];
 
-        int tongLyThuyet = 0;
-        for (int i = 1; i <= limit; i++) {
-            tongLyThuyet += i;
-        }
-
-        int tongThucTe = 0;
-        for (int i = 0; i < limit - 1; i++) {
-            System.out.printf("Nhập phần tử thứ %d: ", i + 1);
-            daySo[i] = sc.nextInt();
-            tongThucTe += daySo[i];
-        }
-
-        int soConThieu = tongLyThuyet - tongThucTe;
-        System.out.println("Số còn thiếu trong dãy là: " + soConThieu);
     }
 }

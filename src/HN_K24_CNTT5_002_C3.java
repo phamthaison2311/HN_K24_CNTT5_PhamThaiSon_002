@@ -26,40 +26,12 @@ public class HN_K24_CNTT5_002_C3 {
 
         System.out.printf("Giao của hai mảng: ");
         for (int i = 0; i < n; i++) {
-            boolean daXuatHien = false;
-            for (int k = 0; k < i; k++) {
-                if (arrA[k] == arrA[i]) {
-                    daXuatHien = true;
+            for (int j = 1; j < m; j++) {
+                if (arrA[i] == arrB[j]) {
+                    System.out.printf("%d ", arrA[i]);
                     break;
                 }
             }
-
-            if (!daXuatHien) {
-                for (int j = 0; j < m; j++) {
-                    if (arrA[i] == arrB[j]) {
-                        System.out.printf("%d ", arrA[i]);
-                        break;
-                    }
-                }
-            }
         }
-
-        System.out.println();
-        int maxLanXuatHien = 0;
-        int giaTriPhanTu = arrA[0];
-
-        for (int i = 0; i < n; i++) {
-            int dem = 0;
-            for (int j = 0; j < n; j++) {
-                if (arrA[i] == arrA[j]) {
-                    dem++;
-                }
-            }
-            if (dem > maxLanXuatHien) {
-                maxLanXuatHien = dem;
-                giaTriPhanTu = arrA[i];
-            }
-        }
-        System.out.printf("Phần tử xuất hiện nhiều nhất trong mảng A là %d với %d lần.", giaTriPhanTu, maxLanXuatHien);
     }
 }
